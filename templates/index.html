@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Phishing URL Detector</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <main class="container">
+        <section class="panel" aria-labelledby="page-title">
+            <p class="eyebrow">Local URL analysis</p>
+            <h1 id="page-title">Phishing URL Detector</h1>
+            <p class="description">Analyze a URL using local lexical features.</p>
+
+            <form id="prediction-form">
+                <label for="url-input">URL to analyze</label>
+                <div class="input-row">
+                    <input id="url-input" name="url" type="text" autocomplete="url"
+                           placeholder="https://example.com" maxlength="4096" required>
+                    <button id="analyze-button" type="submit">Analyze</button>
+                </div>
+            </form>
+
+            <p id="loading-message" class="loading" role="status" hidden>Analyzing locally...</p>
+            <section id="result-card" class="result-card" aria-live="polite" hidden>
+                <p class="result-label">Prediction</p>
+                <h2 id="prediction-value"></h2>
+                <dl>
+                    <div><dt>Label</dt><dd id="label-value"></dd></div>
+                    <div><dt>Probability</dt><dd id="probability-value"></dd></div>
+                </dl>
+            </section>
+            <p id="error-message" class="error" role="alert" hidden></p>
+            <p class="note">Results are based on a development ML model and should not be treated as definitive security verification.</p>
+        </section>
+    </main>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

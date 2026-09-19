@@ -1,0 +1,26 @@
+# Virtual environment
+.venv/
+venv/
+
+# Python cache and tooling
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# Local environment files
+.env
+
+# Generated machine-learning artifacts
+models/*
+!models/.gitkeep
+
+# Local datasets and generated reports
+data/*
+!data/.gitkeep
+reports/
+
+# Editor and OS files
+.vscode/*.code-workspace
+.DS_Store
+Thumbs.db
